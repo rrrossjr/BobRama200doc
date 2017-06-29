@@ -29,10 +29,10 @@ To create an application in Twitter, open a browser and access Twitter Applicati
 Management System with the URL <https://apps.twitter.com/>.  After a successful login with your
 Twitter account, you will see following Application Management page:
 
-![](images/200/Picture200-1.png) 
+![](images/200/Picture200-1-1.png) 
 
 Click **Create New App** button to load the page below to create a new application.
-![](images/200/Picture200-2.png) 
+![](images/200/Picture200-1-2.png) 
 **Name** of the application must be unique among all users in Twitter. You may want to add a user-specific prefix to the name. **Website** of the application must start with a protocol, either
 http or https in the demo. **Callback URL** is only necessary if the application need to request
 Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows you to
@@ -42,12 +42,12 @@ After reading and accepting the _Twitter Developer Agreement_, click **Create yo
 
 When the application is created, the following application page will appear. You can review general information of the application. But the most critical information we need in the Oracle Integration Cloud Service is OAuth 1.0 credentials.
 
-![](images/200/Picture200-3.png) 
+![](images/200/Picture200-1-3.png) 
 
 Select the **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
 generated. In this demo, we also need to allocate an Access Token to access Twitter service from the application.
 
-![](images/200/Picture200-4.png) 
+![](images/200/Picture200-1-4.png) 
 
 Click **Create my access token** button in Token Actions section to generate required credentials.
 
@@ -59,7 +59,7 @@ Oracle Integration Cloud Service can leverage built-in adapters to connect vario
 
 You need to first login to Oracle Cloud to configure Oracle Integration Cloud Service. Open a browser, and then enter the URL of [Oracle Cloud](https://cloud.oracle.com/home). Click the **Sign In** link along the top of the Oracle page to access following page:
 
-![](images/200/Picture200-6.png) 
+![](images/200/Picture200-2.0-1.png) 
 
 Oracle Cloud will leverage data center infrastructure in different spots across the world.  After registering to Oracle Cloud, customers can request services from the data center near their location to get better performance.
 
@@ -67,19 +67,19 @@ When logged into Oracle Cloud, customers need to first select the data center wh
 
 An Identity Domain is the container where accounts and Cloud Services are provisioned.  Customers must enter the correct Identity Domain to login and access their services. In this demo, the user should select the Identity Domain where Oracle Integration Service is provisioned.  This will be provided by the instructor if you do not know it.
 
-![](images/200/Picture200-7.png) 
+![](images/200/Picture200-2.0-2.png) 
 
 Then, credential information needs to be input to login to Oracle Cloud platform. 
 
-![](images/200/Picture200-8.png) 
+![](images/200/Picture200-2.0-3.png) 
 
 After login to Oracle Cloud, the user can view and access cloud services from following page.
 
-![](images/200/Picture200-9.png) 
+![](images/200/Picture200-2.0-4.png) 
 
 Select the **Integration** catalog link on this Dashboard to jump to the following Oracle Integration Service page.
 
-![](images/200/Picture200-10.png) 
+![](images/200/Picture200-2.0-5.png) 
 
 From the **Overview** section (this is selected by default), the user can view current instances of Oracle Integration Cloud Service.
 Integrations are configured and deployed in separate service instances.
@@ -87,32 +87,32 @@ Integrations are configured and deployed in separate service instances.
 
 Click **Open Service Console** link of the service instance where connections and integrations can be configured. Integration Service Console will display as below:
 
-![](images/200/Picture200-11.png) 
+![](images/200/Picture200-2.0-6.png) 
 
 **2 .1 Configure connection to Twitter**
 
 Click Create Connections in the Console to load the Connection Designer page:
 
-![](images/200/Picture200-12.png) 
+![](images/200/Picture200-2.1-1.png) 
 
 Click **New Connection** action in the page.  The following Wizard will appear to let you first select from pre-built adapters.
 
-![](images/200/Picture200-13.png) 
+![](images/200/Picture200-2.1-2.png) 
 
 Scrolling down to the bottom of the list you can find the **Twitter** adapter, click the **Select** button to confirm your selection. A Twitter dialog will pop up to input your Twitter connection configuration information.  
 
-![](images/200/Picture200-14.png) 
+![](images/200/Picture200-2.1-3.png) 
 
 To allow a request service to Twitter, specify a **Name** of the connection, and select the value **Invoke** for the **Role**. Click the **Create** button to create the connection.
 
 After the connection is successfully created, you can see a light-green banner on top of the page. Next you need to configure parameters of the connection.
 
-![](images/200/Picture200-15.png) 
+![](images/200/Picture200-2.1-4.png) 
 
 Click the **Configure Security** button half way down on the right side of the page.  The following dialog will appear to let you input
 credential information to establish the Twitter connection.
 
-![](images/200/Picture200-16.png) 
+![](images/200/Picture200-2.1-5.png) 
 
 All credential information used in this dialog is from previous step. You can copy those parameters from the Twitter Application Management page directly. After filling in all required fields, click the **OK** button.
 
@@ -121,50 +121,38 @@ test passed, a message will display in the light-green banner. Also the progress
 
 After test is done, you can save the connection by clicking **Save** action. Then click **Exit Connection** action to go back to Connection Designer page.
 
-![](images/200/Picture200-17.png) 
+![](images/200/Picture200-2.1-6.png) 
 
 **2.2 Configure connection to Oracle Storage Cloud Service**
 
-In the Connection Designer page, click **New Connection** action to launch the Adapter
-Selection dialog. Oracle Integration Service does not provide built-in adapter for Oracle Storage
-Cloud Service, however user can leverage generic REST adapter to access REST API endpoint of
+In the Connection Designer page, click **New Connection** action to launch the Adapter Selection dialog. Oracle Integration Service does not provide a built-in adapter for Oracle Storage Cloud Service, however the user can leverage generic REST adapter to access REST API endpoint of
 the Oracle Storage Cloud.
 
-In the search box of the dialog, input “REST” then click the search icon, the REST adapter will
-be the only available adapter in the list.
+In the search box of the dialog, input “REST” then click the search icon, the REST adapter will be the only available adapter in the list.
 
+![](images/200/Picture200-2.2-1.png) 
 
-Click **Select** action in the REST adapter, the connection design page will show again to let you
-configure the connection to Oracle Storage Cloud Service.
+Click the **Select** action in the REST adapter.  The connection design page will let you configure the connection to Oracle Storage Cloud Service.
 
-```
-First, following dialog will appear to collect general information of the connection.
-```
-Specify the name of the connection and select **Role** to **Trigger and Invoke** which means that
-the connection can both receive notification from Oracle Storage Cloud when Object Store is
-changed and make requests to the Oracle Storage Service. Click **Create** button to create the
+![](images/200/Picture200-2.2-2.png) 
+
+Specify the **Name** of the connection and select **Trigger and Invoke** for the **Role**.  This means that the connection can both receive notification from Oracle Storage Cloud when Object Store is changed and make requests to the Oracle Storage Service. Click the **Create** button to create the
 connection.
 
-Next, we need to input the connection parameters to REST API endpoint of the Oracle
-Storage Cloud. Click **Configure Connectivity** button in the page to launch following dialog.
+Next, we need to input the connection parameters to REST API endpoint of the Oracle Storage Cloud. Click the **Configure Connectivity** button in the page to launch following dialog.
 
+![](images/200/Picture200-2.2-3.png) 
 
-Set **Connection Type** to “REST API Base URL”, select **TLS Version** to “TLS V1.1” and copy the
-base url (without URI part) of the REST API endpoint of the Storage Cloud to the **Connection URL**
-field. Click **OK** to close the dialog.
+Set **Connection Type** to “REST API Base URL”, set **TLS Version** to “TLS V1.1” and copy the base url (without URI part) of the REST API endpoint of the Storage Cloud to the **Connection URL** field. Click **OK** to close the dialog.
 
-The last parameters need to configure is the security information to login to REST API
-endpoint of the Storage Cloud. Click **Configure Security** button in the page to launch following
-dialog.
+The last parameters that need to be configured are the security information to login to REST API endpoint of the Storage Cloud. Click **Configure Security** button in the page to launch following dialog.
 
-All the information in this dialog can be known from the Oracle Storage Cloud configuration.
-Format of the **Username** filed is “ _Storage-<Identity Domain>:<login name>_ ”.
+![](images/200/Picture200-2.2-4.png) 
+
+All the information in this dialog can be known from the Oracle Storage Cloud configuration.  Format of the **Username** filed is “Storage-\<Identity Domain>:\<login name>”.
 
 After specifying all required information, click **OK** to close the dialog.
-Now all required parameters have been configured for the Oracle Storage Cloud connection.
-A test is also required to ensure the configuration is correct. After test is done, click **Save** action
-to save the connection, and then click **Exit Connection** action to return to Connection Design
-page.
+Now all required parameters have been configured for the Oracle Storage Cloud connection.  A test is also required to ensure the configuration is correct. After the test is done, click **Save** action to save the connection, and then click **Exit Connection** action to return to Connection Design page.
 
 ## Step 3 : Design the Integration
 

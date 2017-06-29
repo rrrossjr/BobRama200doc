@@ -1,11 +1,10 @@
-![](images/200/Picture-lab.png)  
+ 
 # Demo Introduction
 
 ## Keywords:
 
-```
 Oracle Integration Cloud Service, Oracle Storage Cloud Service
-```
+
 ## Goal of Demo:
 
 To demonstrate how easily to leverage Oracle Integration Cloud Service to build integration
@@ -14,12 +13,10 @@ Storage Cloud.
 
 ## Pre-requisites:
 
-User has registered both Oracle Integration Cloud Service and Oracle Storage Cloud Service.
-The storage containers for the demo have been configured properly.
+* User has registered both Oracle Integration Cloud Service and Oracle Storage Cloud Service.
+* The storage containers for the demo have been configured properly.
+* User already has a Twitter account.
 
-```
-User already has a Twitter account.
-```
 # Demo Steps
 
 ## Step 1: Create an Application in Twitter
@@ -29,27 +26,23 @@ running in Twitter. Instead it is for allocating OAuth 1.0 credentials for an re
 which can request Twitter services, for example retrieving feeds, creating Twitter message etc.
 
 To create an application in Twitter, open a browser and access Twitter Application
-Management System with the URL: https://apps.twitter.com/. After a successful login with your
+Management System with the URL <https://apps.twitter.com/>.  After a successful login with your
 Twitter account, you will see following Application Management page:
 
+![](images/200/Picture200-1.png) 
 
-```
-Click Create New App button to load the page below to create a new application.
-```
-**Name** of the application must be unique among all users in Twitter. You’d better adding a
-user-specific prefix to the name. **Website** of the application must start with a protocol, either
+Click **Create New App** button to load the page below to create a new application.
+![](images/200/Picture200-2.png) 
+**Name** of the application must be unique among all users in Twitter. You may want to add a user-specific prefix to the name. **Website** of the application must start with a protocol, either
 http or https in the demo. **Callback URL** is only necessary if the application need to request
-Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows to
-use same account, so can leave the field empty.
+Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows you to
+use same account, so you can leave the field empty.
 
-After reading and accepting Twitter Developer Agreement, click **Create your Twitter
-application** button at bottom.
+After reading and accepting the _Twitter Developer Agreement_, click **Create your Twitter application** button at bottom.
 
-When the application is created, following application page will appear. You can review
-general information of the application. But the most critical information we need in the Oracle
-Integration Cloud Service is OAuth 1.0 credentials.
+When the application is created, the following application page will appear. You can review general information of the application. But the most critical information we need in the Oracle Integration Cloud Service is OAuth 1.0 credentials.
 
-
+![](images/200/Picture200-3.png) 
 Select **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
 generated. In this demo, we also need to allocate Access Token to access Twitter service from
 application.

@@ -43,88 +43,85 @@ After reading and accepting the _Twitter Developer Agreement_, click **Create yo
 When the application is created, the following application page will appear. You can review general information of the application. But the most critical information we need in the Oracle Integration Cloud Service is OAuth 1.0 credentials.
 
 ![](images/200/Picture200-3.png) 
-Select **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
-generated. In this demo, we also need to allocate Access Token to access Twitter service from
-application.
 
+Select the **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
+generated. In this demo, we also need to allocate an Access Token to access Twitter service from the application.
 
-Select **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
-generated. In this demo, we also need to allocate Access Token to access Twitter service from
-application. Click **Create my access token** button in Token Actions section to generate required
-credentials.
+![](images/200/Picture200-4.png) 
 
-Keep Consumer Key/Secret and Access Token/Secret pairs confidentially for configuring
-connections to Twitter with Oracle Cloud Integration Service.
+Click **Create my access token** button in Token Actions section to generate required credentials.
+
+Keep Consumer Key/Secret and Access Token/Secret pairs confidential for configuring connections to Twitter with Oracle Cloud Integration Service.
 
 ## Step 2 : Configure Connections in Oracle Integration Cloud Service
 
-Oracle Integration Cloud Service can leverage built-in adapters to connect various kinds of
-external services. In this step, we will configure connections to Twitter and Oracle Storage Cloud
-Services.
+Oracle Integration Cloud Service can leverage built-in adapters to connect various kinds of external services. In this step, we will configure connections to Twitter and Oracle Storage Cloud Services.
 
-You need to first login to Oracle Cloud to configure Oracle Integration Cloud Service. Open a
-browser, and then enter the URL of Oracle Cloud. Click **Sign In** link on the top to access following
-page:
+You need to first login to Oracle Cloud to configure Oracle Integration Cloud Service. Open a browser, and then enter the URL of [Oracle Cloud](https://cloud.oracle.com/home). Click the **Sign In** link along the top of the Oracle page to access following page:
 
+![](images/200/Picture200-6.png) 
 
-Oracle Cloud will leverage data center infrastructure in different spots across the world.
-After registering to Oracle Cloud, customers can request services from the data center near their
-location to get better performance.
+Oracle Cloud will leverage data center infrastructure in different spots across the world.  After registering to Oracle Cloud, customers can request services from the data center near their location to get better performance.
 
-When login to Oracle Cloud, customers need to first select the data center where their
-services have been deployed.
+When logged into Oracle Cloud, customers need to first select the data center where their services have been deployed.
 
-Identity Domain is the container where accounts and Cloud Services are provisioned.
-Customers must select the correct Identity Domain to login and access their services. In this
-demo, user should select the Identity Domain where Oracle Integration Service is provisioned.
+An Identity Domain is the container where accounts and Cloud Services are provisioned.  Customers must enter the correct Identity Domain to login and access their services. In this demo, the user should select the Identity Domain where Oracle Integration Service is provisioned.  This will be provided by the instructor if you do not know it.
 
+![](images/200/Picture200-7.png) 
 
-Then, credential information need to input to login to Oracle Cloud platform. After login to
-Oracle Cloud, user can view and access cloud services from following page.
+Then, credential information needs to be input to login to Oracle Cloud platform. 
 
-Select **Integration** catalog in this page to jump to following Oracle Integration Service page.
-From the **Overview** page, user can view current instances of Oracle Integration Cloud Service.
+![](images/200/Picture200-8.png) 
+
+After login to Oracle Cloud, the user can view and access cloud services from following page.
+
+![](images/200/Picture200-9.png) 
+
+Select the **Integration** catalog link on this Dashboard to jump to the following Oracle Integration Service page.
+
+![](images/200/Picture200-10.png) 
+
+From the **Overview** section (this is selected by default), the user can view current instances of Oracle Integration Cloud Service.
 Integrations are configured and deployed in separate service instances.
 
 
-Click **Open Service Console** link of the service instance where connections and integrations
-will be configured. Integration Service Console will display as below:
+Click **Open Service Console** link of the service instance where connections and integrations can be configured. Integration Service Console will display as below:
+
+![](images/200/Picture200-11.png) 
 
 **2 .1 Configure connection to Twitter**
 
-```
 Click Create Connections in the Console to load the Connection Designer page:
-```
 
-Click **New Connection** action in the page, following Wizard will appear to let you first select
-from pre-built adapters.
+![](images/200/Picture200-12.png) 
 
-Scroll down to the bottom of the list you can find **Twitter** adapter, click **Select** button to
-confirm your selection. A Twitter connection configuration page will appear, first following dialog
-will pop up to input general information of the connection.
+Click **New Connection** action in the page.  The following Wizard will appear to let you first select from pre-built adapters.
 
+![](images/200/Picture200-13.png) 
 
-Specify a name of the connection, and select the **Role** to **Invoke** to allow request services to
-Twitter. Click **Create** button to create the connection.
+Scrolling down to the bottom of the list you can find the **Twitter** adapter, click the **Select** button to confirm your selection. A Twitter dialog will pop up to input your Twitter connection configuration information.  
 
-After the connection is successfully created, you can see a light-green banner on top of the
-page. Next you need to configure parameters of the connection.
+![](images/200/Picture200-14.png) 
 
-Click **Configure Security** button in the page, following dialog will appear to let you input
+To allow a request service to Twitter, specify a **Name** of the connection, and select the value **Invoke** for the **Role**. Click the **Create** button to create the connection.
+
+After the connection is successfully created, you can see a light-green banner on top of the page. Next you need to configure parameters of the connection.
+
+![](images/200/Picture200-15.png) 
+
+Click the **Configure Security** button half way down on the right side of the page.  The following dialog will appear to let you input
 credential information to establish the Twitter connection.
 
+![](images/200/Picture200-16.png) 
 
-All credential information used in this dialog is from previous step. You can copy those
-parameters from Twitter Application Management page directly. After fill all required fields, click
-**OK** button.
+All credential information used in this dialog is from previous step. You can copy those parameters from the Twitter Application Management page directly. After filling in all required fields, click the **OK** button.
 
-Now all required parameters have been configured for the Twitter connection. However it is
-not sure that the connection will work. Click **Test** action on top of the page to trigger a test. If the
-test passed, a message will display in the light-green banner. Also the progress icon on the right
-will indicate that the connection is 100 percent correct.
+Once all required parameters have been configured for the Twitter connection click the **Test** action on top of the page to trigger a test. If the
+test passed, a message will display in the light-green banner. Also the progress icon on the right will indicate that the connection is 100 percent correct.
 
-After test is done, you can save the connection by clicking **Save** action. Then click **Exit
-Connection** action to go back to Connection Designer page.
+After test is done, you can save the connection by clicking **Save** action. Then click **Exit Connection** action to go back to Connection Designer page.
+
+![](images/200/Picture200-17.png) 
 
 **2.2 Configure connection to Oracle Storage Cloud Service**
 

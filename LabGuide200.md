@@ -156,129 +156,109 @@ Now all required parameters have been configured for the Oracle Storage Cloud co
 
 ## Step 3 : Design the Integration
 
-In this step, we will demonstrate how to design integrations with Oracle Integration Cloud
-Service to load Twitter feeds that the user is interested in and pull the data into Data Lake in
-Oracle Storage Cloud.
+In this step, we will demonstrate how to design integrations with Oracle Integration Cloud Service to load Twitter feeds that the user is interested in and pull the data into Data Lake in Oracle Storage Cloud.
 
-Oracle Integration Cloud Service provides an interactive tool for designing integrations with
-zero coding. The tool is available from the Designer Portal in Oracle Integration Cloud Service
+Oracle Integration Cloud Service provides an interactive tool for designing integrations with zero coding. The tool is available from the Designer Portal in Oracle Integration Cloud Service. To go to Designer Portal, select **Designer** link on top of the Oracle Integration Cloud Service page.
 
+![](images/200/Picture200-3-1.png) 
 
-page. To go to Designer Portal, select **Designer** link on top of the Oracle Integration Cloud Service
-page.
-
-From Designer Portal user can go directly to various designer tools, for example Integration
-Designer, Connection Designer etc., in Oracle Integration Cloud Service. Click **Integrations** icon to
+From the Designer Portal the user can go directly to various designer tools, for example Integration Designer, Connection Designer etc., in Oracle Integration Cloud Service. Click **Integrations** icon to
 launch following Integration Designer.
 
-User can manage and monitor integrations in the designer page. To create a new integration,
-click **New Integration** button on the top. Oracle Integration Cloud Service has pre-defined styles
+![](images/200/Picture200-3-2.png) 
+
+User can manage and monitor integrations in the designer page. To create a new integration, click the **New Integration** button on the top. Oracle Integration Cloud Service has pre-defined styles
 or patterns to design the integration.
 
+![](images/200/Picture200-3-3.png) 
 
-In this demo, the integration is complex. It needs to handle connections to both Twitter and
-Oracle Storage Cloud carefully. User also needs to control data ingestion, transform and output at
+In this demo, the integration is complex. It needs to handle connections to both Twitter and Oracle Storage Cloud carefully. The User also needs to control data ingestion, transform and output at
 fine-grained level.
 
-Select the **Orchestration** pattern for the integration, following dialog will pop up to allow
-user provide general information of the integration.
+Select the **Orchestration** pattern for the integration.  The following dialog will pop up to allow the user provide general information of the integration.
 
-Name, version and an optional package are used to uniquely identify the integration. An
-integration could be triggered either by an event from a service connection or a schedule defined
-by Oracle Integration platform.
+Name, version and an optional package are used to uniquely identify the integration. An integration could be triggered either by an event from a service connection or a schedule defined by Oracle Integration platform.
 
-```
-Select Schedule as trigger for the integration, and specify name, version and package for the
-```
+![](images/200/Picture200-3-4.png) 
 
-integration, then click **Create** button.
+Select Schedule as the trigger for the integration, and specify name, version and package for the integration, then click the **Create** button.
 
-Following Designer page will appear to give user an interactive interface to design logic of
-the integration. On the left of the page are popup toolboxes. User can select to **Invoke** an
-available services, add an **Action** and handle **Error** in the integration. In the middle of the page
-are panel to view and edit the integration interactively. If the integration logic is very complex,
-user can also zoom and go to different part of the view with UI controls in the page.
+The following Designer page will appear to give the user an interactive interface to design logic of the integration. On the left of the page are popup toolboxes. User can **Invoke** an available services, add an **Action** and handle **Error** in the integration. In the middle of the page are panels to view and edit the integration interactively. If the integration logic is very complex, the user can also zoom and go to a different part of the view with UI controls in the page.
 
-At initial, only a start and end node in the integration design page. User needs to add more
-logic to the integration.
+![](images/200/Picture200-3-5.png) 
 
-In the demo, we will first invoke Twitter to retrieve any new feeds. Move the mouse to
-INVOKES tab on the left, it will pop up a toolbox to let user select available services. Select
-Twitter catalog, all Twitter service connections will show just below the catalog.
+Initially, there is only a start and end node in the integration design page. The User needs to add more logic to the integration.
 
-```
+In the demo, the user will first invoke Twitter to retrieve any new feeds. Move the mouse to the **INVOKES** tab on the left, which will pop up a toolbox to let the user select available services. Select
+Twitter catalog.  All Twitter service connections will show just below the catalog.
+
+![](images/200/Picture200-3-6.png) 
+
 Drag the connection in between start and end node of the flow in the design panel.
-```
 
-Following wizard will appear to let use customize the service invocation. The **Basic Info** tab
-let user assign a name of the invocation. The name will show as display name of the invocation
+![](images/200/Picture200-3-7.png)
+
+The following wizard will appear to let the user customize the service invocation. The **Basic Info** tab lets the user assign a name of the invocation. The name will show as the display name of the invocation
 node in the design panel.
 
-After filling the required information, click **Next** button to move to following page. In this
-page user can select which service function need to invoke from the integration.
+![](images/200/Picture200-3-8.png) 
 
+After filling the required information, click the **Next** button to move to following page. In this page the user can select which service function needs to be invoked from the integration.
 
-Select “Search tweets” from the function list, then click **Next** button to move to following
-page. This page will show overview information of the invocation. User has the opportunity to
-check the configuration, if anything is wrong, they can go back to previous page to make
-modification.
+![](images/200/Picture200-3-9.png) 
 
+Select “**Search tweets**” from the function list, then click the **Next** button to move to following page. This page will show overview information of the invocation. The User has the opportunity to
+check the configuration.  If anything is wrong, they can go back to previous page to make modifications.
 
-Click **Done** to accept the configuration. A new invocation node will appear in the design
-panel. However it is not done yet, user also needs to customize parameters of the invocation.
-Click the invocation node, a pop up toolbox will appear.
+![](images/200/Picture200-3-10.png) 
 
-Click button in the toolbox to launch following dialog to map invocation parameters.
-Available parameters of the service call are listed on the right. User can design mapping for each
-individual parameter. A mapping is the way to assign runtime value of the target of existing
-sources. The source could be a static value, data from an available data source etc. Click a
-parameter in the list can modify the mapping.
+Click **Done** to accept the configuration. A new invocation node will appear in the design panel. However it is not done yet, the user also needs to customize parameters of the invocation.  Click the invocation node, a pop up toolbox will appear.
 
+![](images/200/Picture200-3-11.png) 
 
-The first parameter needs to customize in the demo is **q**. Click the parameter will launch
-another dialog to design the mapping. User can select an entity from a source on the left, and
-drag it to link with the target. Also user can assign a fixed value to the target.
+Click ![](images/200/Picture200-3-11a.png) the pencil button in the toolbox to launch the following dialog to map invocation parameters.
+Available parameters of the service call are listed on the right. The user can design mapping for each individual parameter. A mapping is the way to assign runtime value of the target of existing
+sources. The source could be a static value, data from an available data source etc. Click a parameter in the list can modify the mapping.
 
-In this demo, the parameter will use a fixed value which indicates search tweets by a specific
-tag.
+![](images/200/Picture200-3-12.png) 
 
-Click the target directly, a text box will appear to let you input the value. Input name of the
-interested tag in the tweets. You should encode the string according to XML standard.
+The first parameter that needs to be customized in the demo is **q**. Click the parameter will launch another dialog to design the mapping. The user can select an entity from a source on the left, and
+drag it to link with the target. Also the user can assign a fixed value to the target.
 
-Click **Save** button on the top to apply the change, then click **Close** button to return to
-previous dialog.
+![](images/200/Picture200-3-13.png) 
 
+In this demo, the parameter will use a fixed value which indicates search tweets by a specific tag.
 
-Another parameter needs to be customized is **result_type**. Use a fixed value “recent” for
-this parameter to only retrieve new tweets from user’s Twitter account.
+Click the target directly, a text box will appear to let you input the value. Input name of the interested tag in the tweets. You should encode the string according to XML standard.
 
-After both parameters are customized, use can view the configuration in the dialog. If
-properly configured, click **Exit Mapper** button to save the change.
+Click the **Save** button on the top to apply the change, then click the **Close** button to return to the previous dialog.
 
-Now the integration can invoke Twitter to retrieve interested tweets from user’s account.
-Next step is to enable writing those tweets to Data Lake in Oracle Storage Cloud. Services from
-the Oracle Storage Cloud can be leveraged implement the function.
+![](images/200/Picture200-3-14.png) 
 
-The integration will first authenticate to the Oracle Storage Cloud to retrieve a security token
-for following requests. Select pre-defined Oracle Storage Cloud connection from **INVOKES** pop up
-toolbox in the left. Then drag the connection to the position between the Twitter node and the
-end node in the flow.
+Another parameter that needs to be customized is **result_type**. Use a fixed value “recent” for this parameter to only retrieve new tweets from the user’s Twitter account.
 
+After both parameters are customized, the user can view the configuration in the dialog. If properly configured, click **Exit Mapper** button to save the change.
 
-Following dialog will appear to configure the service invocation. The REST service endpoint
-at Oracle Storage Cloud is a HTTP service. The authentication process is wrapped in HTTP
-communication. Credential information is wrapped in a HTTP GET request, server returns
-authentication result in the HTTP response.
+![](images/200/Picture200-3-15.png) 
 
-Specify the relative URI of the authentication service at the Oracle Storage Cloud, it is
-_/auth/v1.0_ in this demo. Select to use GET method to send HTTP request. Customization need to
-be enabled for both preparing Request headers and analyzing Response headers.
+Now the integration can invoke Twitter to retrieve interested tweets from user’s account.  The next step is to enable writing those tweets to Data Lake in Oracle Storage Cloud. Services from the Oracle Storage Cloud can be leveraged to implement the function.
 
-Click **Next** button to move to following page. The page allows configure HTTP headers that
-are specific to the authentication process. Click button to add a new header declaration. A
-name must be given in left column and an optional description in right column.
+The integration will first authenticate to the Oracle Storage Cloud to retrieve a security token for following requests. Select pre-defined Oracle Storage Cloud connection from the **INVOKES** pop up
+toolbox on the left. Then drag the connection to the position between the Twitter node and the end node in the flow.
 
+![](images/200/Picture200-3-16.png) 
 
+The following dialog will appear to configure the service invocation. The REST service endpoint at Oracle Storage Cloud is a HTTP service. The authentication process is wrapped in HTTP communication. Credential information is wrapped in a HTTP GET request, the server returns authentication result in the HTTP response.
+
+![](images/200/Picture200-3-17.png)
+
+Specify the relative URI of the authentication service at the Oracle Storage Cloud, it is _/auth/v1.0_ in this demo. Select to use GET method to send HTTP request. Customization need to be enabled for both preparing Request headers and analyzing Response headers.
+
+Click the **Next** button to move to the following page. The page allows the user to configure HTTP headers that are specific to the authentication process. Click ![](images/200/Picture200-3-18a.png) the PLUS button to add a new header declaration. A name must be given in left column and an optional description in the right column.
+
+![](images/200/Picture200-3-18.png)
+
+XXXXXXXX
 Two headers, **X-Storage-User** and **X-Storage-Pass** , are defined. They wrap username and
 password for authentication respectively.
 

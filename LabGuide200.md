@@ -21,22 +21,18 @@ Storage Cloud.
 
 ## Step 1: Create an Application in Twitter
 
-This step will create an application in Twitter. However it is actually not an application
-running in Twitter. Instead it is for allocating OAuth 1.0 credentials for an remote application
+This step will create an application in Twitter. However it is actually not an application running in Twitter. Instead it is for allocating OAuth 1.0 credentials for an remote application
 which can request Twitter services, for example retrieving feeds, creating Twitter message etc.
 
-To create an application in Twitter, open a browser and access Twitter Application
-Management System with the URL <https://apps.twitter.com/>.  After a successful login with your
-Twitter account, you will see following Application Management page:
+To create an application in Twitter, open a browser and access Twitter Application Management System with the URL <https://apps.twitter.com/>.  After a successful login with your Twitter account, you will see following Application Management page:
 
 ![](./images/200/picture200-1-1.png)
 
 Click **Create New App** button to load the page below to create a new application.
+
 ![](images/200/picture200-1-2.png) 
-**Name** of the application must be unique among all users in Twitter. You may want to add a user-specific prefix to the name. **Website** of the application must start with a protocol, either
-http or https in the demo. **Callback URL** is only necessary if the application need to request
-Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows you to
-use same account, so you can leave the field empty.
+
+The **Name** of the application must be unique among all users in Twitter. You may want to add a user-specific prefix to the name. **Website** of the application must start with a protocol, either http or https in the demo. **Callback URL** is only necessary if the application needs to request Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows you to use the same account, so you can leave the field empty.
 
 After reading and accepting the _Twitter Developer Agreement_, click **Create your Twitter application** button at bottom.
 
@@ -83,7 +79,6 @@ Select the **Integration** catalog link on this Dashboard to jump to the followi
 
 From the **Overview** section (this is selected by default), the user can view current instances of Oracle Integration Cloud Service.
 Integrations are configured and deployed in separate service instances.
-
 
 Click **Open Service Console** link of the service instance where connections and integrations can be configured. Integration Service Console will display as below:
 
@@ -151,8 +146,7 @@ The last parameters that need to be configured are the security information to l
 
 All the information in this dialog can be known from the Oracle Storage Cloud configuration.  Format of the **Username** filed is “Storage-\<Identity Domain>:\<login name>”.
 
-After specifying all required information, click **OK** to close the dialog.
-Now all required parameters have been configured for the Oracle Storage Cloud connection.  A test is also required to ensure the configuration is correct. After the test is done, click **Save** action to save the connection, and then click **Exit Connection** action to return to Connection Design page.
+After specifying all required information, click **OK** to close the dialog.  Now all the required parameters have been configured for the Oracle Storage Cloud connection.  A test is also required to ensure the configuration is correct. After the test is done, click **Save** action to save the connection, and then click **Exit Connection** action to return to Connection Design page.
 
 ## Step 3 : Design the Integration
 
@@ -162,18 +156,15 @@ Oracle Integration Cloud Service provides an interactive tool for designing inte
 
 ![](images/200/picture200-3-1.png) 
 
-From the Designer Portal the user can go directly to various designer tools, for example Integration Designer, Connection Designer etc., in Oracle Integration Cloud Service. Click **Integrations** icon to
-launch following Integration Designer.
+From the Designer Portal the user can go directly to various designer tools, for example Integration Designer, Connection Designer etc., in Oracle Integration Cloud Service. Click **Integrations** icon to launch following Integration Designer.
 
 ![](images/200/picture200-3-2.png) 
 
-User can manage and monitor integrations in the designer page. To create a new integration, click the **New Integration** button on the top. Oracle Integration Cloud Service has pre-defined styles
-or patterns to design the integration.
+User can manage and monitor integrations in the designer page. To create a new integration, click the **New Integration** button on the top. Oracle Integration Cloud Service has pre-defined styles or patterns to design the integration.
 
 ![](images/200/picture200-3-3.png) 
 
-In this demo, the integration is complex. It needs to handle connections to both Twitter and Oracle Storage Cloud carefully. The User also needs to control data ingestion, transform and output at
-fine-grained level.
+In this demo, the integration is complex. It needs to handle connections to both Twitter and Oracle Storage Cloud carefully. The User also needs to control data ingestion, transform and output at fine-grained level.
 
 Select the **Orchestration** pattern for the integration.  The following dialog will pop up to allow the user provide general information of the integration.
 
@@ -189,8 +180,7 @@ The following Designer page will appear to give the user an interactive interfac
 
 Initially, there is only a start and end node in the integration design page. The User needs to add more logic to the integration.
 
-In the demo, the user will first invoke Twitter to retrieve any new feeds. Move the mouse to the **INVOKES** tab on the left, which will pop up a toolbox to let the user select available services. Select
-Twitter catalog.  All Twitter service connections will show just below the catalog.
+In the demo, the user will first invoke Twitter to retrieve any new feeds. Move the mouse to the **INVOKES** tab on the left, which will pop up a toolbox to let the user select available services. Select the Twitter catalog.  All Twitter service connections will show just below the catalog.
 
 ![](images/200/picture200-3-6.png) 
 
@@ -198,8 +188,7 @@ Drag the connection in between start and end node of the flow in the design pane
 
 ![](images/200/picture200-3-7.png)
 
-The following wizard will appear to let the user customize the service invocation. The **Basic Info** tab lets the user assign a name of the invocation. The name will show as the display name of the invocation
-node in the design panel.
+The following wizard will appear to let the user customize the service invocation. The **Basic Info** tab lets the user assign a name of the invocation. The name will show as the display name of the invocation node in the design panel.
 
 ![](images/200/picture200-3-8.png) 
 
@@ -207,8 +196,7 @@ After filling the required information, click the **Next** button to move to fol
 
 ![](images/200/picture200-3-9.png) 
 
-Select “**Search tweets**” from the function list, then click the **Next** button to move to following page. This page will show overview information of the invocation. The User has the opportunity to
-check the configuration.  If anything is wrong, they can go back to previous page to make modifications.
+Select "**Search tweets**" from the function list, then click the **Next** button to move to following page. This page will show overview information of the invocation. The User has the opportunity to check the configuration.  If anything is wrong, they can go back to previous page to make modifications.
 
 ![](images/200/picture200-3-10.png) 
 
@@ -216,14 +204,11 @@ Click **Done** to accept the configuration. A new invocation node will appear in
 
 ![](images/200/picture200-3-11.png) 
 
-Click ![](images/200/picture200-3-11a.png) the pencil button in the toolbox to launch the following dialog to map invocation parameters.
-Available parameters of the service call are listed on the right. The user can design mapping for each individual parameter. A mapping is the way to assign runtime value of the target of existing
-sources. The source could be a static value, data from an available data source etc. Click a parameter in the list can modify the mapping.
+Click ![](images/200/picture200-3-11a.png) the pencil button in the toolbox to launch the following dialog to map invocation parameters.  Available parameters of the service call are listed on the right. The user can design mapping for each individual parameter. A mapping is the way to assign runtime value of the target of existing sources. The source could be a static value, data from an available data source etc. Click a parameter in the list can modify the mapping.
 
 ![](images/200/picture200-3-12.png) 
 
-The first parameter that needs to be customized in the demo is **q**. Click the parameter will launch another dialog to design the mapping. The user can select an entity from a source on the left, and
-drag it to link with the target. Also the user can assign a fixed value to the target.
+The first parameter that needs to be customized in the demo is **q**. Click the parameter will launch another dialog to design the mapping. The user can select an entity from a source on the left, and drag it to link with the target. Also the user can assign a fixed value to the target.
 
 ![](images/200/picture200-3-13.png) 
 
@@ -243,8 +228,7 @@ After both parameters are customized, the user can view the configuration in the
 
 Now the integration can invoke Twitter to retrieve interested tweets from user’s account.  The next step is to enable writing those tweets to Data Lake in Oracle Storage Cloud. Services from the Oracle Storage Cloud can be leveraged to implement the function.
 
-The integration will first authenticate to the Oracle Storage Cloud to retrieve a security token for following requests. Select pre-defined Oracle Storage Cloud connection from the **INVOKES** pop up
-toolbox on the left. Then drag the connection to the position between the Twitter node and the end node in the flow.
+The integration will first authenticate to the Oracle Storage Cloud to retrieve a security token for following requests. Select pre-defined Oracle Storage Cloud connection from the **INVOKES** pop up toolbox on the left. Then drag the connection to the position between the Twitter node and the end node in the flow.
 
 ![](images/200/picture200-3-16.png) 
 

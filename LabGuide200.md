@@ -30,6 +30,8 @@ Management System with the URL <https://apps.twitter.com/>.  After a successful 
 Twitter account, you will see following Application Management page:
 
 ![](images/200/Picture200-1-1.png) 
+test
+![](./images/200/picture200-1-1.png)
 
 Click **Create New App** button to load the page below to create a new application.
 ![](images/200/Picture200-1-2.png) 

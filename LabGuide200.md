@@ -3,7 +3,9 @@
 
 ## Keywords:
 
+```
 Oracle Integration Cloud Service, Oracle Storage Cloud Service
+```
 
 ## Goal of Demo:
 

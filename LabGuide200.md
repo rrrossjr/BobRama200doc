@@ -29,10 +29,10 @@ To create an application in Twitter, open a browser and access Twitter Applicati
 Management System with the URL <https://apps.twitter.com/>.  After a successful login with your
 Twitter account, you will see following Application Management page:
 
-![](./images/200/Picture200-1-1.png)
+![](./images/200/picture200-1-1.png)
 
 Click **Create New App** button to load the page below to create a new application.
-![](images/200/Picture200-1-2.png) 
+![](images/200/picture200-1-2.png) 
 **Name** of the application must be unique among all users in Twitter. You may want to add a user-specific prefix to the name. **Website** of the application must start with a protocol, either
 http or https in the demo. **Callback URL** is only necessary if the application need to request
 Twitter services as some other accounts. In the Oracle Integration Cloud Service, it only allows you to
@@ -42,12 +42,12 @@ After reading and accepting the _Twitter Developer Agreement_, click **Create yo
 
 When the application is created, the following application page will appear. You can review general information of the application. But the most critical information we need in the Oracle Integration Cloud Service is OAuth 1.0 credentials.
 
-![](images/200/Picture200-1-3.png) 
+![](images/200/picture200-1-3.png) 
 
 Select the **Keys and Access Tokens** tab in the page. By default, only Consumer Key & Secret are
 generated. In this demo, we also need to allocate an Access Token to access Twitter service from the application.
 
-![](images/200/Picture200-1-4.png) 
+![](images/200/picture200-1-4.png) 
 
 Click **Create my access token** button in Token Actions section to generate required credentials.
 
@@ -59,7 +59,7 @@ Oracle Integration Cloud Service can leverage built-in adapters to connect vario
 
 You need to first login to Oracle Cloud to configure Oracle Integration Cloud Service. Open a browser, and then enter the URL of [Oracle Cloud](https://cloud.oracle.com/home). Click the **Sign In** link along the top of the Oracle page to access following page:
 
-![](images/200/Picture200-2.0-1.png) 
+![](images/200/picture200-2.0-1.png) 
 
 Oracle Cloud will leverage data center infrastructure in different spots across the world.  After registering to Oracle Cloud, customers can request services from the data center near their location to get better performance.
 
@@ -67,19 +67,19 @@ When logged into Oracle Cloud, customers need to first select the data center wh
 
 An Identity Domain is the container where accounts and Cloud Services are provisioned.  Customers must enter the correct Identity Domain to login and access their services. In this demo, the user should select the Identity Domain where Oracle Integration Service is provisioned.  This will be provided by the instructor if you do not know it.
 
-![](images/200/Picture200-2.0-2.png) 
+![](images/200/picture200-2.0-2.png) 
 
 Then, credential information needs to be input to login to Oracle Cloud platform. 
 
-![](images/200/Picture200-2.0-3.png) 
+![](images/200/picture200-2.0-3.png) 
 
 After login to Oracle Cloud, the user can view and access cloud services from following page.
 
-![](images/200/Picture200-2.0-4.png) 
+![](images/200/picture200-2.0-4.png) 
 
 Select the **Integration** catalog link on this Dashboard to jump to the following Oracle Integration Service page.
 
-![](images/200/Picture200-2.0-5.png) 
+![](images/200/picture200-2.0-5.png) 
 
 From the **Overview** section (this is selected by default), the user can view current instances of Oracle Integration Cloud Service.
 Integrations are configured and deployed in separate service instances.
@@ -87,32 +87,32 @@ Integrations are configured and deployed in separate service instances.
 
 Click **Open Service Console** link of the service instance where connections and integrations can be configured. Integration Service Console will display as below:
 
-![](images/200/Picture200-2.0-6.png) 
+![](images/200/picture200-2.0-6.png) 
 
 **2 .1 Configure connection to Twitter**
 
 Click Create Connections in the Console to load the Connection Designer page:
 
-![](images/200/Picture200-2.1-1.png) 
+![](images/200/picture200-2.1-1.png) 
 
 Click **New Connection** action in the page.  The following Wizard will appear to let you first select from pre-built adapters.
 
-![](images/200/Picture200-2.1-2.png) 
+![](images/200/picture200-2.1-2.png) 
 
 Scrolling down to the bottom of the list you can find the **Twitter** adapter, click the **Select** button to confirm your selection. A Twitter dialog will pop up to input your Twitter connection configuration information.  
 
-![](images/200/Picture200-2.1-3.png) 
+![](images/200/picture200-2.1-3.png) 
 
 To allow a request service to Twitter, specify a **Name** of the connection, and select the value **Invoke** for the **Role**. Click the **Create** button to create the connection.
 
 After the connection is successfully created, you can see a light-green banner on top of the page. Next you need to configure parameters of the connection.
 
-![](images/200/Picture200-2.1-4.png) 
+![](images/200/picture200-2.1-4.png) 
 
 Click the **Configure Security** button half way down on the right side of the page.  The following dialog will appear to let you input
 credential information to establish the Twitter connection.
 
-![](images/200/Picture200-2.1-5.png) 
+![](images/200/picture200-2.1-5.png) 
 
 All credential information used in this dialog is from previous step. You can copy those parameters from the Twitter Application Management page directly. After filling in all required fields, click the **OK** button.
 
@@ -121,7 +121,7 @@ test passed, a message will display in the light-green banner. Also the progress
 
 After test is done, you can save the connection by clicking **Save** action. Then click **Exit Connection** action to go back to Connection Designer page.
 
-![](images/200/Picture200-2.1-6.png) 
+![](images/200/picture200-2.1-6.png) 
 
 **2.2 Configure connection to Oracle Storage Cloud Service**
 
@@ -130,24 +130,24 @@ the Oracle Storage Cloud.
 
 In the search box of the dialog, input “REST” then click the search icon, the REST adapter will be the only available adapter in the list.
 
-![](images/200/Picture200-2.2-1.png) 
+![](images/200/picture200-2.2-1.png) 
 
 Click the **Select** action in the REST adapter.  The connection design page will let you configure the connection to Oracle Storage Cloud Service.
 
-![](images/200/Picture200-2.2-2.png) 
+![](images/200/picture200-2.2-2.png) 
 
 Specify the **Name** of the connection and select **Trigger and Invoke** for the **Role**.  This means that the connection can both receive notification from Oracle Storage Cloud when Object Store is changed and make requests to the Oracle Storage Service. Click the **Create** button to create the
 connection.
 
 Next, we need to input the connection parameters to REST API endpoint of the Oracle Storage Cloud. Click the **Configure Connectivity** button in the page to launch following dialog.
 
-![](images/200/Picture200-2.2-3.png) 
+![](images/200/picture200-2.2-3.png) 
 
 Set **Connection Type** to “REST API Base URL”, set **TLS Version** to “TLS V1.1” and copy the base url (without URI part) of the REST API endpoint of the Storage Cloud to the **Connection URL** field. Click **OK** to close the dialog.
 
 The last parameters that need to be configured are the security information to login to REST API endpoint of the Storage Cloud. Click **Configure Security** button in the page to launch following dialog.
 
-![](images/200/Picture200-2.2-4.png) 
+![](images/200/picture200-2.2-4.png) 
 
 All the information in this dialog can be known from the Oracle Storage Cloud configuration.  Format of the **Username** filed is “Storage-\<Identity Domain>:\<login name>”.
 
@@ -160,17 +160,17 @@ In this step, we will demonstrate how to design integrations with Oracle Integra
 
 Oracle Integration Cloud Service provides an interactive tool for designing integrations with zero coding. The tool is available from the Designer Portal in Oracle Integration Cloud Service. To go to Designer Portal, select **Designer** link on top of the Oracle Integration Cloud Service page.
 
-![](images/200/Picture200-3-1.png) 
+![](images/200/picture200-3-1.png) 
 
 From the Designer Portal the user can go directly to various designer tools, for example Integration Designer, Connection Designer etc., in Oracle Integration Cloud Service. Click **Integrations** icon to
 launch following Integration Designer.
 
-![](images/200/Picture200-3-2.png) 
+![](images/200/picture200-3-2.png) 
 
 User can manage and monitor integrations in the designer page. To create a new integration, click the **New Integration** button on the top. Oracle Integration Cloud Service has pre-defined styles
 or patterns to design the integration.
 
-![](images/200/Picture200-3-3.png) 
+![](images/200/picture200-3-3.png) 
 
 In this demo, the integration is complex. It needs to handle connections to both Twitter and Oracle Storage Cloud carefully. The User also needs to control data ingestion, transform and output at
 fine-grained level.
@@ -179,53 +179,53 @@ Select the **Orchestration** pattern for the integration.  The following dialog 
 
 Name, version and an optional package are used to uniquely identify the integration. An integration could be triggered either by an event from a service connection or a schedule defined by Oracle Integration platform.
 
-![](images/200/Picture200-3-4.png) 
+![](images/200/picture200-3-4.png) 
 
 Select Schedule as the trigger for the integration, and specify name, version and package for the integration, then click the **Create** button.
 
 The following Designer page will appear to give the user an interactive interface to design logic of the integration. On the left of the page are popup toolboxes. User can **Invoke** an available services, add an **Action** and handle **Error** in the integration. In the middle of the page are panels to view and edit the integration interactively. If the integration logic is very complex, the user can also zoom and go to a different part of the view with UI controls in the page.
 
-![](images/200/Picture200-3-5.png) 
+![](images/200/picture200-3-5.png) 
 
 Initially, there is only a start and end node in the integration design page. The User needs to add more logic to the integration.
 
 In the demo, the user will first invoke Twitter to retrieve any new feeds. Move the mouse to the **INVOKES** tab on the left, which will pop up a toolbox to let the user select available services. Select
 Twitter catalog.  All Twitter service connections will show just below the catalog.
 
-![](images/200/Picture200-3-6.png) 
+![](images/200/picture200-3-6.png) 
 
 Drag the connection in between start and end node of the flow in the design panel.
 
-![](images/200/Picture200-3-7.png)
+![](images/200/picture200-3-7.png)
 
 The following wizard will appear to let the user customize the service invocation. The **Basic Info** tab lets the user assign a name of the invocation. The name will show as the display name of the invocation
 node in the design panel.
 
-![](images/200/Picture200-3-8.png) 
+![](images/200/picture200-3-8.png) 
 
 After filling the required information, click the **Next** button to move to following page. In this page the user can select which service function needs to be invoked from the integration.
 
-![](images/200/Picture200-3-9.png) 
+![](images/200/picture200-3-9.png) 
 
 Select “**Search tweets**” from the function list, then click the **Next** button to move to following page. This page will show overview information of the invocation. The User has the opportunity to
 check the configuration.  If anything is wrong, they can go back to previous page to make modifications.
 
-![](images/200/Picture200-3-10.png) 
+![](images/200/picture200-3-10.png) 
 
 Click **Done** to accept the configuration. A new invocation node will appear in the design panel. However it is not done yet, the user also needs to customize parameters of the invocation.  Click the invocation node, a pop up toolbox will appear.
 
-![](images/200/Picture200-3-11.png) 
+![](images/200/picture200-3-11.png) 
 
-Click ![](images/200/Picture200-3-11a.png) the pencil button in the toolbox to launch the following dialog to map invocation parameters.
+Click ![](images/200/picture200-3-11a.png) the pencil button in the toolbox to launch the following dialog to map invocation parameters.
 Available parameters of the service call are listed on the right. The user can design mapping for each individual parameter. A mapping is the way to assign runtime value of the target of existing
 sources. The source could be a static value, data from an available data source etc. Click a parameter in the list can modify the mapping.
 
-![](images/200/Picture200-3-12.png) 
+![](images/200/picture200-3-12.png) 
 
 The first parameter that needs to be customized in the demo is **q**. Click the parameter will launch another dialog to design the mapping. The user can select an entity from a source on the left, and
 drag it to link with the target. Also the user can assign a fixed value to the target.
 
-![](images/200/Picture200-3-13.png) 
+![](images/200/picture200-3-13.png) 
 
 In this demo, the parameter will use a fixed value which indicates search tweets by a specific tag.
 
@@ -233,30 +233,30 @@ Click the target directly, a text box will appear to let you input the value. In
 
 Click the **Save** button on the top to apply the change, then click the **Close** button to return to the previous dialog.
 
-![](images/200/Picture200-3-14.png) 
+![](images/200/picture200-3-14.png) 
 
 Another parameter that needs to be customized is **result_type**. Use a fixed value “recent” for this parameter to only retrieve new tweets from the user’s Twitter account.
 
 After both parameters are customized, the user can view the configuration in the dialog. If properly configured, click **Exit Mapper** button to save the change.
 
-![](images/200/Picture200-3-15.png) 
+![](images/200/picture200-3-15.png) 
 
 Now the integration can invoke Twitter to retrieve interested tweets from user’s account.  The next step is to enable writing those tweets to Data Lake in Oracle Storage Cloud. Services from the Oracle Storage Cloud can be leveraged to implement the function.
 
 The integration will first authenticate to the Oracle Storage Cloud to retrieve a security token for following requests. Select pre-defined Oracle Storage Cloud connection from the **INVOKES** pop up
 toolbox on the left. Then drag the connection to the position between the Twitter node and the end node in the flow.
 
-![](images/200/Picture200-3-16.png) 
+![](images/200/picture200-3-16.png) 
 
 The following dialog will appear to configure the service invocation. The REST service endpoint at Oracle Storage Cloud is a HTTP service. The authentication process is wrapped in HTTP communication. Credential information is wrapped in a HTTP GET request, the server returns authentication result in the HTTP response.
 
-![](images/200/Picture200-3-17.png)
+![](images/200/picture200-3-17.png)
 
 Specify the relative URI of the authentication service at the Oracle Storage Cloud, it is _/auth/v1.0_ in this demo. Select to use GET method to send HTTP request. Customization need to be enabled for both preparing Request headers and analyzing Response headers.
 
-Click the **Next** button to move to the following page. The page allows the user to configure HTTP headers that are specific to the authentication process. Click ![](images/200/Picture200-3-18a.png) the PLUS button to add a new header declaration. A name must be given in left column and an optional description in the right column.
+Click the **Next** button to move to the following page. The page allows the user to configure HTTP headers that are specific to the authentication process. Click ![](images/200/picture200-3-18a.png) the PLUS button to add a new header declaration. A name must be given in left column and an optional description in the right column.
 
-![](images/200/Picture200-3-18.png)
+![](images/200/picture200-3-18.png)
 
 XXXXXXXX
 Two headers, **X-Storage-User** and **X-Storage-Pass** , are defined. They wrap username and
@@ -499,5 +499,3 @@ execution.
 
 Click an integration execution in the list will jump to following page. User can view the
 progress and state of the integration flow.
-
-
